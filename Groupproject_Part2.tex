@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath}
+\usepackage{setspace}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+
+\usepackage{enumitem}
+
+\title{QF603 Group Mini-Project 2}
+
+\author{Group F}
+
+\date{\today}
+
+\begin{document}
+	\maketitle
+	
+	\begin{abstract}
+		In this project, we performed and analysed two simple linear regressions. The first is a regression of the daily log returns of the DJIA Index (dependent variable) ("DJIA") on the S\&P500 Index (independent variable) ("SP500), between 29$\textsuperscript{th}$ January 1985 and 17$\textsuperscript{th}$ October 2018. The second, is a regression of the annual log returns for the same two indices (observations taken at the last day of the year).
+	\end{abstract} 
+	
+	\newpage
+	\setcounter{secnumdepth}{1}
+	\section*{Task 3: Regression of Daily Log Returns}
+	
+	\subsection{Regression Coefficients}
+	\underline{Results}
+	\begin{itemize}[nosep]
+		\item Alpha = $\hat{a} = -0.000024$, Beta = $\hat{b} = 0.987703$
+		\item Standard Distribution of Residual = $\sigma_{u_t} = 0.002944$
+	\end{itemize}
+
+	The regression can be expressed as $r_{(DJIA, t)} = -0.000024 +  0.987703 r_{(S\&P500, t)}$.
+	
+	As Beta is close to 1, the sensitivity of the DJIA daily log returns to the SP500's is also approximately 1.
+	Also, because Alpha is close to 0, there is no ``consistent'' (systematic) difference between DJIA daily log returns and the SP500's.
+	
+	\subsection{Hypothesis Testing on Coefficients}
+	\underline{Results}
+	\begin{itemize}[nosep]
+		\item T-statistics for $\hat{a} = -0.740308$, and for $\hat{b} = 339.973655$
+		\item Degree of Freedom = $8500 - 2 = 8498$
+		\item Null Hypothesis ($H_0$) are that $a=b=0$.
+		\item Alternate hypothesis ($H_1$) are that $a\ne b\ne 0$
+		\item Critical value at 5\% significance level = $\pm1.9602$
+	\end{itemize}
+	
+	For $\hat{a}$, the test statistic lies within the 95\% confidence interval (i.e. does not exceed the 5\% critical level). Therefore, we do not reject the null hypothesis. The intercept coefficient $\hat{a}$ is not significantly different from 0 at the 5\% significance level.
+	
+	In contrast, for $\hat{b}$, the test statistic lies well beyond the 95\% confidence interval (i.e. significantly exceeds the 5\% critical level). Therefore, we reject the null hypothesis and accept the alternate hypothesis. The slope coefficient $\hat{b}$ is significantly different from 0 at the 5\% significance level.
+	
+	\subsection{Goodness of Fit}
+	\underline{Results}
+	\begin{itemize}[nosep]
+		\item R-Squared $(R^2) = 0.931512$
+		\item Adjusted R-Squared $(\textnormal{adj-}R^2) = 0.931504$
+	\end{itemize}
+
+	The $R^2$ value reports the degree to which our independent variable (the SP500 daily log returns) explains the variation of the dependent variable (the DJIA daily log returns). Since R-square is 0.931512, it means that over 90\% of the variation in the dependent variable is explained by the independent variable.
+	
+	$\textnormal{Adj-}R^2$ also measures the goodness of model fitting, but takes into consideration the number of independent variables in the model. $R^2$ will only increase or  stay the same when we add more independent variables, even if they do not have any relationship with the dependent variable. $\textnormal{Adj-}R^2$ on the other hand, will "penalize" the model for having excessive dependent variables that do not significantly improve the model. 
+	
+	The $\textnormal{adj-}R^2$ is always lower than the $R^2$ value. And, in our case, because there is only 1 independent variable, the $\textnormal{adj-}R^2$ and the $R^2$ values are relatively equal.
+	
+	\subsection{Other Findings}
+	\underline{Results}
+	\begin{itemize}[nosep]
+		\item Jarque-Bera test stats = 3187.500000
+		\item Degrees of Freedom = lalala
+		\item Null Hypothesis $H_0 = 0$
+		\item Alternate Hypothesis $H_1 \ne 0$
+		\item Critical Chi-Square Value at ??\% significance level = ????
+	\end{itemize}
+	
+	The JB test's null hypothesis is JB = 0. If the null hypothesis is not rejected, it indicates that the
+	distribution of the errors are normally distributed (under a certain level of significance).
+	
+	\section*{Task 4: Regression of Yearly Log Returns}
+	\label{sec:num2}
+	
+	\subsection{Regression Coefficients}
+	\underline{Results}
+	
+	\subsection{Regression Coefficients}
+	\underline{Results}
+	
+	\subsection{Hypothesis Testing on Coefficients}
+	\underline{Results}
+	
+	
+	\subsection{Goodness of Fit}
+	\underline{Results}
+	
+	\subsection{Other Findings}
+	\underline{Results}
+	
+	to be continue...
+	
+\end{document}
